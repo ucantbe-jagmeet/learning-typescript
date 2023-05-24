@@ -43,8 +43,9 @@ const person = {
   role: Role.AUTHOR,
 };
 
+// any type -> same as in javascript
 let favorites: string[];
-favorites = ["Traveling"];
+favorites = ["Traveling", "23"];
 
 console.log(person.name);
 
