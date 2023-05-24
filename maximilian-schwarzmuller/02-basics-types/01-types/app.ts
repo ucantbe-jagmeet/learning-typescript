@@ -1,24 +1,13 @@
-function add(n1:number, n2:number , showResult: boolean , phrase : string){
-    
-    // if(typeof n1 !== "number" || typeof n2 !== "number"){
-    //     throw new Error("Incorrect Input")
-    // }
+// object types contains key types
+// {} is typescript notation of specialized object type
 
-    const result = n1 + n2
-
-    if(showResult){
-        console.log(phrase + result);
-    } else {
-        return n1 + n2
-    }
+const person:{
+    name: string;
+    age: number;
+} = {
+// const person = {
+    name: "ucantbe",
+    age: 23
 }
 
-let number1:number
-number1 = 5
-const number2 = 2.5
-const printResult = true
-let resultPhrase = "Result is: "
-// resultPhrase= 0
-
-add(number1, number2 , printResult , resultPhrase)
-// console.log(result);
+console.log(person.name);
