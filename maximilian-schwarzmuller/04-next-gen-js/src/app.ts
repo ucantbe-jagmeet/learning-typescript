@@ -1,8 +1,8 @@
 const userName = "ucantbe";
 // userName = "Jagmeet";
-let age = 23;
+// let age = 23;
 
-age = 22;
+// age = 22;
 
 // var result;
 // function add(a: number, b: number) {
@@ -37,9 +37,9 @@ const person = {
   age: 30,
 };
 
-const copiedPerson = { ...person };
+// const copiedPerson = { ...person };
 
-console.log(copiedPerson);
+// console.log(copiedPerson);
 
 const add = (...numbers: number[]) => {
   return numbers.reduce((acc, curr) => {
@@ -48,3 +48,8 @@ const add = (...numbers: number[]) => {
 };
 const addedNumbers = add(3, 5, 6, 7, 8);
 console.log(addedNumbers);
+
+const [hobby1, hobby2, ...remaining] = hobbies;
+console.log(hobbies, hobby1, hobby2);
+
+const { name: user, age } = person;
