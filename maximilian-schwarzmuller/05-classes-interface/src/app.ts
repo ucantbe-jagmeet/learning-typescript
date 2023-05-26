@@ -1,11 +1,20 @@
 class Department {
   // private readonly id: string;
   // private name: string;
+
+  static fiscalYear = 2023;
+  // static methods and variables are only called by or within static methods
+  // the other way of calling static variable is by class name
+
   protected employees: string[] = [];
 
   constructor(private readonly id: string, public name: string) {
     // this.id = id;
     // this.name = name;
+  }
+
+  static createEmployee(name: string) {
+    return { name: name };
   }
 
   describe(this: Department) {
@@ -70,6 +79,9 @@ class AccountingDepartment extends Department {
     console.log(this.reports);
   }
 }
+
+const employee1 = Department.createEmployee("Employee 1");
+console.log(employee1, Department.fiscalYear);
 
 const it = new ITDepartment("d1", ["Superman"]);
 it.addEmployee("Jagmeet");
