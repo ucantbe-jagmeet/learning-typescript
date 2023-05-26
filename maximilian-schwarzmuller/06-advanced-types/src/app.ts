@@ -34,8 +34,23 @@ function add(a: Combinable, b: Combinable) {
   return a + b;
 }
 
-// const result = add("ucantbe","jagmeet")
-// const result = add(1,5)
+// const result = add("ucantbe", "jagmeet");
+// const result = add(1, 5);
+
+const fetchedUserData = {
+  id: "u1",
+  name: "Max",
+  job: { title: "CEO", description: "my-company" },
+};
+
+// console.log(fetchedUserData.job && fetchedUserData.job.title);
+console.log(fetchedUserData?.job?.title);
+
+const userInput = "";
+
+const storedData = userInput ?? "DEFAULT";
+
+console.log(storedData);
 
 // type UnknownEmployee = Employee | Admin;
 
