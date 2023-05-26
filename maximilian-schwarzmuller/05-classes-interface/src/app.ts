@@ -1,4 +1,4 @@
-class Department {
+abstract class Department {
   // private readonly id: string;
   // private name: string;
 
@@ -8,7 +8,7 @@ class Department {
 
   protected employees: string[] = [];
 
-  constructor(private readonly id: string, public name: string) {
+  constructor(protected readonly id: string, public name: string) {
     // this.id = id;
     // this.name = name;
   }
@@ -17,9 +17,7 @@ class Department {
     return { name: name };
   }
 
-  describe(this: Department) {
-    console.log(` Department (${this.id}): ${this.name}`);
-  }
+  abstract describe(this: Department): void;
 
   addEmployee(employee: string) {
     // this.id = "d2" -> not done due to readonly property
@@ -38,6 +36,10 @@ class ITDepartment extends Department {
   constructor(id: string, admins: string[]) {
     super(id, "IT");
     this.admins = admins;
+  }
+
+  describe() {
+    console.log(`It Department - ID` + this.id);
   }
 }
 
@@ -61,6 +63,10 @@ class AccountingDepartment extends Department {
   constructor(id: string, private reports: string[]) {
     super(id, "Accounting");
     this.lastReport = reports[0];
+  }
+
+  describe() {
+    console.log(`Accounting Department - ID ` + this.id);
   }
 
   addEmployee(name: string) {
@@ -94,9 +100,12 @@ console.log(it);
 const acc = new AccountingDepartment("A1", []);
 acc.mostRecentReport = "Economics";
 acc.addReport("Business");
-console.log(acc.mostRecentReport);
+// console.log(acc.mostRecentReport);
 acc.addEmployee("Max");
 acc.addEmployee("Manu");
-acc.printReports();
+// acc.printReports();
 // acc.printEmployeeInfo();
-console.log(acc);
+
+acc.describe();
+
+// console.log(acc);
