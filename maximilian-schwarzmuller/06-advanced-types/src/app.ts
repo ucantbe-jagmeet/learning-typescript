@@ -116,3 +116,12 @@ const userInputElement = document.getElementById("user-input");
 if (userInputElement) {
   (userInputElement as HTMLInputElement).value = "Hi there";
 }
+
+interface ErrorContainer {
+  [prop: string]: string;
+}
+
+const errorBag: ErrorContainer = {
+  1: "Not a valid Email",
+  username: "Must start with a capital letter",
+};
