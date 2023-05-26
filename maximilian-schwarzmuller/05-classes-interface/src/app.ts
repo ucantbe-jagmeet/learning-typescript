@@ -1,5 +1,16 @@
 // interface -> it describe the structure of an object
 
+// type Addfn = (a: number, b: number) => number;
+interface Addfn {
+  (a: number, b: number): number;
+}
+
+let add: Addfn;
+
+add = (n1: number, n2: number) => {
+  return n1 + n2;
+};
+
 interface Named {
   readonly name: string;
 }
