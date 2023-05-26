@@ -1,7 +1,10 @@
 // interface -> it describe the structure of an object
 
-interface Greetable {
-  name: string;
+interface Named {
+  readonly name: string;
+}
+
+interface Greetable extends Named {
   greet(phrase: string): void;
 }
 
