@@ -1,4 +1,4 @@
-import { FC, useRef } from "react";
+import { FC, useRef, useEffect } from "react";
 
 type NewTodoProps = {
   addTodo: (todoText: string) => void;
@@ -15,13 +15,18 @@ const NewTodo: FC<NewTodoProps> = (props) => {
 
   return (
     <form onSubmit={submitHandler}>
-      <div style={{ display: "flex", flexDirection: "column" }}>
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "column",
+        }}
+      >
         <label htmlFor="todo-text">Todo text</label>
         <input
           type="text"
           id="todo-text"
           ref={textInputRef}
-          style={{ width: "180px" }}
+          style={{ width: "180px", margin: "10px" }}
         />
       </div>
       <button type="submit">Add todo</button>
