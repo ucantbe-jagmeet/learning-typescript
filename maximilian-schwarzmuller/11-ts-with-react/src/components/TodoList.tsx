@@ -5,8 +5,6 @@ interface TodoListProps {
 }
 
 const TodoList: React.FC<TodoListProps> = (props) => {
-  console.log(props.items);
-
   return (
     <ul>
       {props.items.map((todo) => {
