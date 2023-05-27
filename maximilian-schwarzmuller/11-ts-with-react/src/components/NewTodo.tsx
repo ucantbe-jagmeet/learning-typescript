@@ -15,9 +15,14 @@ const NewTodo: FC<NewTodoProps> = (props) => {
 
   return (
     <form onSubmit={submitHandler}>
-      <div>
+      <div style={{ display: "flex", flexDirection: "column" }}>
         <label htmlFor="todo-text">Todo text</label>
-        <input type="text" id="todo-text" ref={textInputRef} />
+        <input
+          type="text"
+          id="todo-text"
+          ref={textInputRef}
+          style={{ width: "180px" }}
+        />
       </div>
       <button type="submit">Add todo</button>
     </form>
