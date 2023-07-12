@@ -40,3 +40,91 @@ class webDev extends Coder{
         return ` I write ${this.lang}`
     }
 }
+
+const Sara = new webDev('Mac', 'Sara', 'Pop', 26)
+console.log(Sara.getLang());
+// console.log(Sara.age);
+// console.log(Sara.lang);
+
+
+//############ Interface ###############
+interface Musician{
+    name:string;
+    instrument:string;
+    play(action:string):string;
+}
+
+
+class Guitarist implements Musician {
+    name :string
+    instrument :string
+
+    constructor( 
+        name:string,
+        instrument : string,
+    ){
+        this.name = name
+        this.instrument = instrument
+    }
+
+    play( action:string){
+        return `${this.name} ${action} the ${this.instrument}`
+    }
+}
+
+const Page = new Guitarist( 'Jimmy', 'Guitar')
+// console.log(Page.play('strums'));
+
+
+////////////////////////////////
+
+class Peeps{
+    static count : number = 0
+
+    static getCount():number{
+        return Peeps.count
+    }
+
+    public id:number
+
+    constructor( public name:string){
+        this.name = name
+        this.id = ++Peeps.count
+    }
+}
+
+const John = new Peeps('John')
+const Steve = new Peeps('Steve')
+const Amy = new Peeps('Amy')
+
+// console.log(John.id);
+// console.log(Amy.id);
+// console.log(Steve.id);
+// console.log(Peeps.count);
+
+
+class Bands {
+    private dataState : string[]
+
+    constructor(){
+        this.dataState = []
+    }
+
+    public get data():string []{
+        return this.dataState
+    }
+
+    public set data( value:string[]){
+        if(Array.isArray(value) && value.every(el => typeof el === 'string')){
+            this.dataState = value
+            return
+        }
+        else throw new Error('Param is not an array of strings')
+    }
+}
+
+const myBands = new Bands()
+myBands.data = ['Neil', "Led Zep"]
+console.log(myBands.data);
+myBands.data = [ ...myBands.data, "ZZ Top"]
+console.log(myBands.data);
