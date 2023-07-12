@@ -23,3 +23,12 @@ let nextVal : number = addOrConcat( 2,2, 'concat') as number
 
 // 10 as string 
 ( 10 as unknown ) as string  // double casting or forced casting
+
+
+// DOM 
+const img = document.querySelector('img') !
+const myImg = document.getElementById('#img') as HTMLImageElement
+const nextImg = <HTMLImageElement>document.getElementById('#img') 
+
+img.src
+myImg.src

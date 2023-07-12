@@ -16,3 +16,9 @@ let myVal = addOrConcat(2, 2, 'concat');
 let nextVal = addOrConcat(2, 2, 'concat');
 // 10 as string 
 10; // double casting or forced casting
+// DOM 
+const img = document.querySelector('img');
+const myImg = document.getElementById('#img');
+const nextImg = document.getElementById('#img');
+img.src;
+myImg.src;
