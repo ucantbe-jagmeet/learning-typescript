@@ -40,3 +40,12 @@ const preview = {
     studentId: "k123",
     title: "Final Project",
 };
+//ReturnType
+// type newAssign = { title:string , points:number}
+const createNewAssign = (title, points) => {
+    return { title, points };
+};
+const tsAssign = createNewAssign('Utility types', 100);
+console.log(tsAssign);
+const assignArgs = ['Generics', 100];
+const tsAssign2 = createNewAssign(...assignArgs);
