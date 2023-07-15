@@ -33,3 +33,29 @@ const assignVerified : Readonly<Assignment> =  { ...assignGraded , verified:true
 
 // assignVerified.grade = 99
 recordAssignment({ ...assignGraded, verified: true})
+
+// Record
+
+const hexColorMap : Record< string, string> = {
+    red: "FF0000",
+    green: "00FF00",
+    blue: "0000FF",
+}
+
+type Students = 'Sara' | 'Kelly'
+type LetterGrades = 'A' | 'B'| 'C'| 'D' | 'U'
+
+const FinalGrades: Record < Students, LetterGrades> = {
+    Sara : "B",
+    Kelly : "U",
+}
+
+interface Grades{
+    assign1 : number;
+    assign2 : number;
+}
+
+const gradeData: Record< Students, Grades> = {
+    Sara: { assign1: 34, assign2: 55 },
+    Kelly: { assign1: 45, assign2: 95 },
+}

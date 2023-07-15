@@ -18,3 +18,17 @@ const recordAssignment = (assign) => {
 const assignVerified = Object.assign(Object.assign({}, assignGraded), { verified: true });
 // assignVerified.grade = 99
 recordAssignment(Object.assign(Object.assign({}, assignGraded), { verified: true }));
+// Record
+const hexColorMap = {
+    red: "FF0000",
+    green: "00FF00",
+    blue: "0000FF",
+};
+const FinalGrades = {
+    Sara: "B",
+    Kelly: "U",
+};
+const gradeData = {
+    Sara: { assign1: 34, assign2: 55 },
+    Kelly: { assign1: 45, assign2: 95 },
+};
