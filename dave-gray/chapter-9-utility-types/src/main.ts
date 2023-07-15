@@ -74,3 +74,13 @@ const preview: AssignPreview = {
     studentId : "k123",
     title : "Final Project",
 }
+
+// Exclude and Extract
+
+type adjustedGrade = Exclude<LetterGrades, "U">
+type highGrades = Extract <LetterGrades, "A" | "B" >
+
+// nonnullable
+
+type AllPossibleGrades = 'Dave' | 'John' | null | undefined
+type NamesOnly = NonNullable < AllPossibleGrades >
